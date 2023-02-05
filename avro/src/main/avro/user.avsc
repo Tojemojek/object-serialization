@@ -1,0 +1,56 @@
+{
+  "namespace": "pl.kostrowski.avro",
+  "type": "record",
+  "name": "Thor",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "surname",
+      "type": "string"
+    },
+    {
+      "name": "birthDate",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "skills",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "ThorSkills",
+          "fields": [
+            {
+              "name": "skillName",
+              "type": "string"
+            },
+            {
+              "name": "skillDescription",
+              "type": "string"
+            },
+            {
+              "name": "skillDate",
+              "type": {
+                "type": "int",
+                "logicalType": "date"
+              }
+            },
+            {
+              "name": "skillCost",
+              "type": {
+                "type": "string",
+                "java-class": "java.math.BigDecimal"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
