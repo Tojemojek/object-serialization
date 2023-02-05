@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: Open API Demo
+  version: 1.0.0
+paths:
+  /thors:
+    get:
+      summary: Get 10 random Thors
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Thor'
+        '400':
+          description: Invalid status value
+  /thor:
+    get:
+      summary: Get 1 random Thor
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thor'
+        '400':
+          description: Invalid status value
+components:
+  schemas:
+    Thor:
+      type: object
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+        birthDate:
+          type: string
+          format: date
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/ThorSkills'
+    ThorSkills:
+      type: object
+      properties:
+        skillName:
+          type: string
+        skillDescription:
+          type: string
+        skillDate:
+          type: string
+          format: date
+        skillCost:
+          type: number
