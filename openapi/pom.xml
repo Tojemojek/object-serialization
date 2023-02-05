@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.kostrowski</groupId>
-    <artifactId>openapi-client</artifactId>
+    <artifactId>openapi</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>openapi-client</name>
+    <name>openapi</name>
     <url>http://maven.apache.org</url>
 
     <parent>
@@ -75,19 +75,32 @@
                 <version>6.3.0</version>
                 <executions>
                     <execution>
-                        <id>generate-client</id>
+                        <id>generate-server</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
                             <output>${project.basedir}</output>
-                            <generatorName>java</generatorName>
-                            <library>resttemplate</library>
+                            <generatorName>spring</generatorName>
+                            <library>spring-boot</library>
                             <apiPackage>pl.kostrowski.generated.api</apiPackage>
                             <modelPackage>pl.kostrowski.generated.model</modelPackage>
-                            <supportingFilesToGenerate>ApiClient.java</supportingFilesToGenerate>
                             <generateSupportingFiles>false</generateSupportingFiles>
+                            <addCompileSourceRoot>false</addCompileSourceRoot>
+                            <configOptions>
+                                <useLombok>true</useLombok>
+                                <additionalModelTypeAnnotations>@lombok.Builder @lombok.NoArgsConstructor @lombok.AllArgsConstructor
+                                </additionalModelTypeAnnotations>
+                                <skipDefaultInterface>true</skipDefaultInterface>
+                                <useSpringBoot3>true</useSpringBoot3>
+                                <delegatePattern>false</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useBeanValidation>true</useBeanValidation>
+                                <performBeanValidation>true</performBeanValidation>
+                                <serializableModel>true</serializableModel>
+                                <useOptional>true</useOptional>
+                            </configOptions>
                         </configuration>
                     </execution>
                 </executions>
