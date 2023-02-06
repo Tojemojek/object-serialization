@@ -24,7 +24,7 @@ import javax.annotation.Generated;
  */
 @lombok.Builder @lombok.NoArgsConstructor @lombok.AllArgsConstructor
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-02-06T09:13:07.033175965+01:00[Europe/Warsaw]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-02-06T20:39:57.755818075+01:00[Europe/Warsaw]")
 public class ThorSkills implements Serializable {
 
   private static final long serialVersionUID = 1L;

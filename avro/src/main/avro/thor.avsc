@@ -7,6 +7,11 @@
       "name": "name",
       "type": "string"
     },
+//    {
+//      "name": "secondName",
+//      "type": ["null", "string"],
+//      "default": null
+//    },
     {
       "name": "surname",
       "type": "string"
